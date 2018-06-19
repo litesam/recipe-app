@@ -5,25 +5,30 @@ const addRecipeEl = document.querySelector('#add-ingredients')
 const recipeId = location.hash.substring(1)
 const recipes = getSavedRecipes()
 
+// Find the recipe which has been clicked by the user
 const recipeInd = recipes.find((recipe) => {
 	return recipeId == recipe.id
 })
 
 // const individualItem = recipeInd.requiredItems
 
+// Set the text value for initial rendering
 recipeTitleEl.value = recipeInd.title
 recipeTextEl.textContent = recipeInd.body
 
+// To modify the title in the screen
 recipeTitleEl.addEventListener('input', (e) => {
 	recipeInd.title = e.target.value
 	saveRecipes(recipes)
 })
 
+// To modify the body in the screen
 recipeTextEl.addEventListener('input', e => {
 	recipeInd.body = e.target.value
 	saveRecipes(recipes)
 })
 
+// Renders the individual items that are needed to make the recipe!
 const renderIndiviual = (indIndEl) => {
 	recipeRequirementEl.innerHTML = ' '
 	indIndEl.forEach(item => {
@@ -34,11 +39,15 @@ const renderIndiviual = (indIndEl) => {
 		checkboxEl.setAttribute('type', 'checkbox')
 		checkboxEl.checked = item.checkItem
 		indEl.textContent = item.textEl
+
+		// Adding a checkbox to the list
 		checkboxEl.addEventListener('click', e => {
 			item.checkItem = !item.checkItem
 			saveRecipes(recipes)
 			renderIndiviual(recipeInd.requiredItems)
 		})
+
+		// Removing a item from the recipe
 		removeEl.textContent = 'remove'
 		removeEl.addEventListener('click', e => {
 			indIndEl.splice(indIndEl.findIndex((ind) => item.id === ind.id), 1)
@@ -52,6 +61,7 @@ const renderIndiviual = (indIndEl) => {
 	})
 }
 
+// Adds a new item to the recipe!
 addRecipeEl.addEventListener('submit', e => {
 	e.preventDefault()
 	let textValue = e.target.elements.recipe.value
@@ -66,4 +76,5 @@ addRecipeEl.addEventListener('submit', e => {
 	e.target.elements.recipe.value = ''
 })
 
+// Initial rendering to the screen
 renderIndiviual(recipeInd.requiredItems)

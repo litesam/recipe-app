@@ -9,6 +9,7 @@ const filters = {
     searchText: ''
 }
 
+// Add new recipe to the list
 newRecipe.addEventListener('click', e => {
     const id = uuidv4()
     recipes.push({
@@ -21,17 +22,22 @@ newRecipe.addEventListener('click', e => {
     location.assign(`/edit.html#${id}`)
 })
 
+// Search for your required recipe!
 searchEl.addEventListener('input', e => {
     filters.searchText = e.target.value
     render(recipes, filters)
 })
 
+
+// Render the list of recipes to the screen
 const render = (recipes, filters) => {
     
+    // Filter the recipes by the search term
     const filteredRecipes = recipes.filter((recipe) => recipe.title.toLowerCase().includes(filters.searchText.toLowerCase()))
 
     recipesEl.innerHTML = ''
     
+    // Displays the recipe to the user
     filteredRecipes.forEach(recipe => {
         const recipeEl = document.createElement('div')
         const textEl = document.createElement('a')
@@ -49,4 +55,5 @@ const render = (recipes, filters) => {
     })        
 }
 
+// Initial rendering after the page has been loaded
 render(recipes, filters)

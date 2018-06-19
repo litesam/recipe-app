@@ -1,3 +1,4 @@
+// Get the saved recipes from the localStorage
 const getSavedRecipes = () => {
     try {
         const recipesJSON = localStorage.getItem('recipes')
@@ -11,10 +12,12 @@ const getSavedRecipes = () => {
     }
 }
 
+// Save the recipes to the localStorage
 const saveRecipes = (recipes) => {
     localStorage.setItem('recipes', JSON.stringify(recipes))
 }
 
+// Needs to be updated: Shows how many content we have in the given individual recipe!
 const showParagraph = (indItems, recipes) => {
     
     // // const recipes = getSavedRecipes()

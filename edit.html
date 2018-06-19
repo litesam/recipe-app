@@ -4,11 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Recipe App</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="edit-recipe">
-            <input type="text" id="recipe-title">
-            <textarea id="recipe-steps"></textarea>
+        <h1 class="header header__title">Recipe App</h1>    
+        <div id="edit-recipe" class="container">
+            <input type="text" id="recipe-title" class="input input--title" placeholder="Recipe Title">
+            <textarea id="recipe-steps" class="textarea" placeholder="Recipe Steps"></textarea>
             <h1>Ingredients</h1>
             <div id="recipe-items"></div>
             <form id="add-ingredients">
