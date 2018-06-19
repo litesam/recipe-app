@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    background: #333745;
+    color: aliceblue;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+.header {
+    background: #20222B;
+    color: white;
+    padding: 1.6rem 0;
+}
+
+.header__title {
+    font-size: 3.2rem;
+    margin-bottom: .4rem;
+    text-align: center;
+}
+
+.button {
+    background: #f59211;
+    border: none;
+    border-bottom: 2px solid #c57409;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: .8rem;
+    transition: background .3s ease;
+}
+
+.button:hover {
+    background: #a57902;
+}
+
+.list-item {
+    text-decoration: none;
+    color: #333333;
+    background: #F7F7F7;
+    border: 1px solid #dedfe0;
+    margin: 1.6rem 0;
+    padding: 1.6rem;
+    display: block;
+    transition: background .3s ease;
+}
+
+.list-item:hover {
+    background: #eeeeee;
+}
+
+.list-item__title {
+    font-size: 1.8rem;
+    margin-bottom: .4rem
+}
+
+#edit-recipe {
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe-items {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.input {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background: #0A1D33;
+    margin: 0;
+    padding: 0;
+    border:1px solid #40062D;
+    text-align: center;
+    color: #F7F7F7;
+}
+
+.input--title {
+    background: #333745;
+    color: #A5AFD7;
+    border: none;
+    border-bottom: 3px solid #282b34;
+    text-align: left;
+    margin: 0 0 12px 0;
+    padding: 12px;
+    border-radius: 0px;
+    width: 300px;
+}
+
+.textarea {
+    border: 1px solid #DEDFE0;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: block;
+    margin: 2.4rem 0;
+    min-height: 15rem;
+    padding: .8rem;
+    width: 100%;
+    background: #333745;
+}
