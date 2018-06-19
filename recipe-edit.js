@@ -25,10 +25,30 @@ recipeTextEl.addEventListener('input', e => {
 })
 
 const renderIndiviual = (indIndEl) => {
+	recipeRequirementEl.innerHTML = ' '
 	indIndEl.forEach(item => {
-		const indEl = document.createElement('p')
-		indEl.textContent = item
-		recipeRequirementEl.appendChild(indEl)	
+		const holdEl = document.createElement('div')
+		const checkboxEl = document.createElement('input')
+		const indEl = document.createElement('label')
+		const removeEl = document.createElement('button')
+		checkboxEl.setAttribute('type', 'checkbox')
+		checkboxEl.checked = item.checkItem
+		indEl.textContent = item.textEl
+		checkboxEl.addEventListener('click', e => {
+			item.checkItem = !item.checkItem
+			saveRecipes(recipes)
+			renderIndiviual(recipeInd.requiredItems)
+		})
+		removeEl.textContent = 'remove'
+		removeEl.addEventListener('click', e => {
+			indIndEl.splice(indIndEl.findIndex((ind) => item.id === ind.id), 1)
+			saveRecipes(recipes)
+			renderIndiviual(recipeInd.requiredItems)
+		})
+		recipeRequirementEl.appendChild(holdEl)
+		holdEl.appendChild(indEl)
+		indEl.appendChild(checkboxEl)	
+		holdEl.appendChild(removeEl)
 	})
 }
 
@@ -36,9 +56,14 @@ addRecipeEl.addEventListener('submit', e => {
 	e.preventDefault()
 	let textValue = e.target.elements.recipe.value
     textEl = textValue.trim()
-	recipeInd.requiredItems.push(textEl)
+	recipeInd.requiredItems.push({
+		id: uuidv4(),
+		textEl,
+		checkItem: false
+	})
 	renderIndiviual(recipeInd.requiredItems)
 	saveRecipes(recipes)
+	e.target.elements.recipe.value = ''
 })
 
 renderIndiviual(recipeInd.requiredItems)

@@ -35,14 +35,17 @@ const render = (recipes, filters) => {
     filteredRecipes.forEach(recipe => {
         const recipeEl = document.createElement('div')
         const textEl = document.createElement('a')
+        // const howManyAvailableEl = document.createElement('p')
         if (recipe.title) {
             textEl.textContent = recipe.title
         } else {
             textEl.textContent = 'Not named recipe'
         }
+        // howManyAvailableEl.textContent = showParagraph(recipe.requiredItems, recipes)
         textEl.setAttribute('href', `/edit.html#${recipe.id}`)
         recipesEl.appendChild(recipeEl)
         recipeEl.appendChild(textEl)
+        // recipesEl.appendChild(howManyAvailableEl)
     })        
 }
 
