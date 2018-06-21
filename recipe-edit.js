@@ -2,11 +2,17 @@ const recipeTitleEl = document.querySelector('#recipe-title')
 const recipeTextEl = document.querySelector('#recipe-steps')
 const recipeRequirementEl = document.querySelector('#recipe-items')
 const addRecipeEl = document.querySelector('#add-ingredients')
+const deleteEl = document.querySelector('#delete-recipe')
 const recipeId = location.hash.substring(1)
 const recipes = getSavedRecipes()
 
 // Find the recipe which has been clicked by the user
 const recipeInd = recipes.find((recipe) => {
+	return recipeId == recipe.id
+})
+
+// Finding the index of the recipe so that the recipe can be deleted from the list
+const recipeIndex = recipes.findIndex((recipe) => {
 	return recipeId == recipe.id
 })
 
@@ -74,6 +80,13 @@ addRecipeEl.addEventListener('submit', e => {
 	renderIndiviual(recipeInd.requiredItems)
 	saveRecipes(recipes)
 	e.target.elements.recipe.value = ''
+})
+
+// Deletes the recipe from the Recipes
+deleteEl.addEventListener('click', () => {
+	recipes.splice(recipeIndex, 1)
+	saveRecipes(recipes)
+	location.assign('/index.html')
 })
 
 // Initial rendering to the screen

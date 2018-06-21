@@ -23,8 +23,7 @@ const showParagraph = (indItems, recipe) => {
     const el = indItems.filter((element) => {
         return element.checkItem
     })
-    console.log(recipe.requiredItems)
-    console.log(el)
+    
     if (el.length === recipe.requiredItems.length) {
         return 'You have all the items!'
     } else if (el.length < recipe.requiredItems.length && el.length === 0) {
