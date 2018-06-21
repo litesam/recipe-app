@@ -51,7 +51,10 @@ const render = (recipes, filters) => {
         textEl.setAttribute('href', `/edit.html#${recipe.id}`)
         recipesEl.appendChild(recipeEl)
         recipeEl.appendChild(textEl)
-        recipesEl.appendChild(howManyAvailableEl)
+        recipeEl.appendChild(howManyAvailableEl)
+
+        recipeEl.classList.add('recipe')
+        textEl.classList.add('anchor')
     })        
 }
 
