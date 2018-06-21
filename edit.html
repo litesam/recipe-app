@@ -5,23 +5,25 @@
         <meta charset="UTF-8">
         <title>Recipe App</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1 class="header header__title">Recipe App</h1>    
-        <div id="edit-recipe" class="container">
-            <input type="text" id="recipe-title" class="input input--title" placeholder="Recipe Title">
-            <textarea id="recipe-steps" class="textarea" placeholder="Recipe Steps"></textarea>
-            <h1>Ingredients</h1>
-            <div id="recipe-items"></div>
-            <form id="add-ingredients">
-                <input type="text" name="recipe" placeholder="Add ingredient">
-                <button>Submit</button>
-            </form>
-            <a href="/index.html">Home</a>
+        <h1 class="header">Recipe App</h1>    
+        <div class="main-content">
+            <div id="edit-recipe">
+                <input type="text" id="recipe-title" class="input input--title" placeholder="Recipe Title"><br>
+                <textarea id="recipe-steps" class="input input--body" placeholder="Recipe Steps"></textarea>
+                <h1>Ingredients</h1>
+                <div id="recipe-items"></div>
+                <form id="add-ingredients">
+                    <input type="text" name="recipe" placeholder="Add ingredient" class="input input--add">
+                    <button class="button">Submit</button>
+                </form>
+                <a href="/index.html" class="anchor">Home</a>
+            </div>
+            <h3>Danger Zone</h3>
+            <button id="delete-recipe" class="button button--large">Delete recipe</button>
         </div>
-        <h4>Danger Zone</h4>
-        <button id="delete-recipe">Delete recipe</button>
         <script src="/recipe-functions.js"></script>
         <script src="/uuidv4.js"></script>
         <script src="/recipe-edit.js"></script>
