@@ -17,7 +17,6 @@ const saveRecipes = (recipes) => {
     localStorage.setItem('recipes', JSON.stringify(recipes))
 }
 
-// Needs to be updated: Shows how many content we have in the given individual recipe!
 const showParagraph = (indItems, recipe) => {
     
     
@@ -28,9 +27,9 @@ const showParagraph = (indItems, recipe) => {
     console.log(el)
     if (el.length === recipe.requiredItems.length) {
         return 'You have all the items!'
-    } else if (el.length < recipe.requiredItems.length) {
-        return 'You have some of the items!'
-    } else {
+    } else if (el.length < recipe.requiredItems.length && el.length === 0) {
         return 'You have none of the items!'
+    } else {
+        return 'You have some of the items!'
     }
 }
