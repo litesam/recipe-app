@@ -7,6 +7,7 @@
 html, body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1rem;
+    color: ghostwhite;
     background: rgba(60,54,73,0.96);
     background: rgb(60,54,73)
 }
@@ -79,4 +80,52 @@ html, body {
 
 .button:hover {
     background: hsla(259, 30%, 45%, 1);
+}
+
+.button--small {
+    padding: 4px;
+    background: red;
+    border-bottom: none;
+}
+
+.button--large {
+    background: red;
+    border-bottom: none;
+    margin: 50px 0;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    border-radius: 5px;
+    font-weight: 300;
+    margin-top: 20px;
+    border: 1px solid #DEDFE0;
+    padding: 3px 6px;
+    height: 32px;
+}
+
+.input--title {
+    margin-left: 200px; 
+}
+
+.input--body {
+    flex-grow: 1;
+    width: 571px;
+    height: 245px;
+    margin-top: 20px;
+}
+
+.input--add {
+    height: 36px;
+    margin-bottom: 20px;
+}
+
+.list-individual {
+    margin: 0 0 10px 0;
 }
