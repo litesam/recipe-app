@@ -5,13 +5,15 @@
         <meta charset="UTF-8">
         <title>Recipe App</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1 class="header header__title">Recipe App</h1>    
-        <div class="container">
+        <div class="search-box">
             <input type="text" id="search-recipe" placeholder="Search" class="input">
-            <div id="recipes"></div>
+        </div>
+        <div class="container">
+            <div id="recipes" class="list-item"></div>
             <button id="new-recipe" class="button">Add New Recipe</button>
         </div>
         <script src="/uuidv4.js"></script>
