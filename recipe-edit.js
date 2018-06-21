@@ -64,6 +64,9 @@ const renderIndiviual = (indIndEl) => {
 		holdEl.appendChild(indEl)
 		indEl.appendChild(checkboxEl)	
 		holdEl.appendChild(removeEl)
+
+		holdEl.classList.add('list-individual')
+		removeEl.classList.add('button', 'button--small')
 	})
 }
 
