@@ -92,7 +92,7 @@ html, body {
 .button--large {
     background: red;
     border-bottom: none;
-    margin: 50px 0;
+    margin: 20px 0 10px 0px;
 }
 
 .main-content {
@@ -127,6 +127,41 @@ html, body {
     margin-bottom: 20px;
 }
 
+.recipe-items {
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
 .list-individual {
     margin: 0 0 10px 0;
+}
+
+@media (max-width: 800px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input--title {
+        margin-left: 100px; 
+    }
+
+    .input--body {
+        flex-grow: 1;
+        width: 371px;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .list-item {
+        border-radius: 2px;
+        background: rgba(87,84,93,0.96);
+        background: rgb(87,84,93);
+        margin: 20px 0;
+        /* width: 500px; */
+        display: inline;
+        color: ghostwhite;
+    }
 }

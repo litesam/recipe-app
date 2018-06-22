@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Recipe App</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
         <link rel="stylesheet" href="styles.css">
@@ -14,7 +15,7 @@
                 <input type="text" id="recipe-title" class="input input--title" placeholder="Recipe Title"><br>
                 <textarea id="recipe-steps" class="input input--body" placeholder="Recipe Steps"></textarea>
                 <h1>Ingredients</h1>
-                <div id="recipe-items"></div>
+                <div id="recipe-items" class="recipe-items"></div>
                 <form id="add-ingredients">
                     <input type="text" name="recipe" placeholder="Add ingredient" class="input input--add">
                     <button class="button">Submit</button>
