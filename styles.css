@@ -45,6 +45,11 @@ html, body {
     margin: 0;
 }
 
+#search-recipe:focus {
+    border-color: hsla(261, 65%, 45%, 1);
+    box-shadow: 0 0 50px 0 hsla(261, 65%, 45%, 1);
+}
+
 .list-item {
     border-radius: 2px;
     background: rgba(87,84,93,0.96);
@@ -52,7 +57,13 @@ html, body {
     margin: 20px 0;
     width: 500px;
     display: inline-block;
+    transition: box-shadow 2s;
     color: ghostwhite;
+}
+
+.list-item:hover {
+    border-color: #232323;
+    box-shadow: 0 0 8px 4px #232323;
 }
 
 .recipe {
@@ -62,6 +73,11 @@ html, body {
     padding-left: 2px;
     border-radius: 2px;
     background: rgb(90, 100, 100);
+}
+
+.recipe:hover {
+    border-color: aqua;
+    box-shadow: 0 0 10px 0 aqua;
 }
 
 .anchor {
@@ -77,6 +93,7 @@ html, body {
     border-bottom: 1px solid hsla(265, 75%, 58%, 1);
     color: ghostwhite;
     cursor: pointer;
+    transition: background 2s;
 }
 
 .button:hover {
@@ -89,10 +106,18 @@ html, body {
     border-bottom: none;
 }
 
+.button--small:hover {
+    background: darkred;
+}
+
 .button--large {
     background: red;
     border-bottom: none;
     margin: 20px 0 10px 0px;
+}
+
+.button--large:hover {
+    background: darkred;
 }
 
 .main-content {
@@ -108,7 +133,14 @@ html, body {
     margin-top: 20px;
     border: 1px solid #DEDFE0;
     padding: 3px 6px;
+    background: #333745;
+    color: whitesmoke;
     height: 32px;
+}
+
+.input:focus {
+    border-color: hsla(265, 75%, 58%, 1);
+    box-shadow: 0 0 8px 0 hsla(265, 75%, 58%, 1);
 }
 
 .input--title {
@@ -136,7 +168,7 @@ html, body {
     margin: 0 0 10px 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 590px) {
     .main-content {
         display: flex;
         flex-direction: column;
